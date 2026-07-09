@@ -1,257 +1,352 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DWANI OF SISTERS — Luxury Accessories</title>
-  <meta name="description" content="DWANI OF SISTERS — curated fashion accessories, jewellery and gift hampers. Shop premium earrings, bangles and new arrivals." />
-  <link rel="icon" href="assets/favicon.png" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#000;
-      --panel:#0f0f0f;
-      --gold:#d6a700;
-      --muted:#dcdcdc;
-      --accent-green:#25D366;
-      --container:1100px;
-      --radius:12px;
-      --gap:16px;
-    }
+<title>DWANI OF SISTERS</title>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:var(--muted);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
+<style>
 
-    a{color:inherit}
-    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
 
-    /* Skip link */
-    .skip{
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-    }
-    .skip:focus{
-      left: 20px;
-      top: 12px;
-      width:auto;
-      height:auto;
-      padding:8px 12px;
-      background:#fff;
-      color:#000;
-      z-index:9999;
-      border-radius:6px;
-    }
+body{
+background:#0f0f0f;
+color:white;
+}
 
-    header{
-      background:var(--panel);
-      border-bottom:3px solid var(--gold);
-      padding:20px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      justify-content:center;
-    }
-    .logo{
-      width:96px;
-      height:96px;
-      border-radius:50%;
-      border:3px solid var(--gold);
-      object-fit:cover;
-      display:block;
-    }
-    header h1{color:var(--gold);font-size:22px;margin:0}
-    header p.tag{color:var(--muted);margin:4px 0 0;font-size:14px;text-align:center}
+header{
+background:#111;
+padding:20px;
+border-bottom:2px solid gold;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
 
-    .hero{
-      padding:48px 0;
-      text-align:center;
-    }
-    .hero h2{color:var(--gold);font-size:28px;margin:0 0 8px}
-    .hero p{margin:10px auto 18px;max-width:800px;font-size:16px;color:#e6e6e6}
-    .btn{
-      display:inline-block;
-      background:var(--gold);
-      color:#000;
-      padding:12px 28px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 6px 16px rgba(214,167,0,0.12);
-    }
-    .btn:focus{outline:3px solid rgba(214,167,0,0.25);outline-offset:4px}
-    .btn.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+header img{
+width:90px;
+height:90px;
+border-radius:50%;
+border:3px solid gold;
+}
 
-    section{padding:28px 0}
+.logo-text h1{
+color:gold;
+font-size:32px;
+}
 
-    .categories .grid, .products-grid{
-      display:grid;
-      gap:var(--gap);
-    }
-    .categories .grid{
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-      align-items:stretch;
-    }
-    .card{
-      background:var(--panel);
-      border:1px solid var(--gold);
-      padding:18px;
-      border-radius:var(--radius);
-      text-align:center;
-      color:var(--muted);
-      transition:transform .18s ease, box-shadow .18s ease;
-      cursor:default;
-    }
-    .card:hover, .card:focus-within{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.logo-text p{
+color:#ddd;
+}
 
-    .products .products-grid{
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      align-items:start;
-    }
-    .product{
-      background:var(--panel);
-      padding:14px;
-      border-radius:14px;
-      border:1px solid rgba(214,167,0,0.12);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .product img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
-    .product h3{margin:0;color:#fff;font-size:18px}
-    .price{color:var(--gold);font-size:18px;font-weight:700}
-    .order{
-      display:inline-block;
-      background:var(--accent-green);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:30px;
-      text-decoration:none;
-      margin-top:auto;
-      align-self:flex-start;
-    }
-    .order:focus{outline:3px solid rgba(37,211,102,0.25);outline-offset:3px}
+.hero{
+text-align:center;
+padding:70px 20px;
+}
 
-    footer{
-      background:var(--panel);
-      border-top:3px solid var(--gold);
-      padding:22px 0;
-      text-align:center;
-      margin-top:28px;
-    }
-    footer p{margin:6px 0;color:#ccc}
+.hero h2{
+font-size:48px;
+color:gold;
+margin-bottom:20px;
+}
 
-    /* utilities */
-    .text-center{text-align:center}
-    .muted{color:#bfbfbf;font-size:14px}
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+}
 
-    /* responsive tweaks */
-    @media (min-width:720px){
-      .brand{justify-content:center}
-      header p.tag{font-size:15px}
-    }
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:gold;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+margin:10px;
+}
 
-    /* reduced motion */
-    @media (prefers-reduced-motion:reduce){
-      .card, .product{transition:none}
-    }
-  </style>
+.section-title{
+text-align:center;
+font-size:36px;
+color:gold;
+margin:50px 0 30px;
+}
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Store",
-    "name":"DWANI OF SISTERS",
-    "description":"Fashion, Jewellery, Gifts — curated accessories and gift hampers.",
-    "telephone":"+917904094006",
-    "sameAs":["https://www.instagram.com/dwani_of_sisters"],
-    "url":"https://example.com"
-  }
-  </script>
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:20px;
+}
+
+.card{
+background:#1d1d1d;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(255,215,0,.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+color:gold;
+}
+
+.price{
+padding:0 15px;
+font-size:22px;
+color:white;
+}
+
+.order{
+display:block;
+margin:20px;
+padding:12px;
+background:#25D366;
+text-align:center;
+text-decoration:none;
+color:white;
+border-radius:8px;
+font-weight:bold;
+}
+
+footer{
+margin-top:60px;
+background:#111;
+padding:30px;
+text-align:center;
+border-top:2px solid gold;
+}
+
+</style>
 </head>
+
 <body>
-  <a href="#main" class="skip">Skip to main content</a>
 
-  <header>
-    <div class="container brand" role="banner" aria-label="Site header">
-      <img src="assets/logo.png" alt="DWANI OF SISTERS logo" class="logo" />
-      <div>
-        <h1>DWANI OF SISTERS</h1>
-        <p class="tag">Fashion • Jewellery • Gifts</p>
-      </div>
-    </div>
-  </header>
+<header>
 
-  <main id="main" class="container" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <h2 id="hero-title">Luxury Collections</h2>
-      <p>Beautiful accessories curated with love ❤️ — handcrafted styles for everyday elegance and special moments.</p>
-      <p>
-        <a class="btn" href="#products">Shop Featured</a>
-        <a class="btn secondary" href="https://www.instagram.com/dwani_of_sisters" target="_blank" rel="noopener noreferrer" style="margin-left:10px">Follow on Instagram</a>
-      </p>
-    </section>
+<img src="IMG-20260709-WA0070.jpg">
 
-    <section class="categories" aria-labelledby="cat-title">
-      <h2 id="cat-title" style="color:var(--gold)">Categories</h2>
-      <div class="grid">
-        <div class="card" tabindex="0">Earrings</div>
-        <div class="card" tabindex="0">Bangles</div>
-        <div class="card" tabindex="0">Hair Accessories</div>
-        <div class="card" tabindex="0">Kids Collection</div>
-        <div class="card" tabindex="0">Gift Hampers</div>
-        <div class="card" tabindex="0">New Arrivals</div>
-      </div>
-    </section>
+<div class="logo-text">
 
-    <section class="products" id="products" aria-labelledby="products-title">
-      <h2 id="products-title" style="color:var(--gold)">Featured Products</h2>
+<h1>DWANI OF SISTERS</h1>
 
-      <div class="products-grid">
-        <article class="product" aria-labelledby="p1-title">
-          <figure>
-            <img src="assets/product1.jpg" alt="Premium gold-plated earrings with pearl" loading="lazy" width="800" height="600">
-            <figcaption class="muted">Premium Earrings — elegant gold-plated design</figcaption>
-          </figure>
-          <h3 id="p1-title">Premium Earrings</h3>
-          <div class="price">₹299</div>
-          <a class="order" href="https://wa.me/917904094006?text=Hi%20I%20want%20to%20order%20Premium%20Earrings" target="_blank" rel="noopener noreferrer" aria-label="Order Premium Earrings on WhatsApp">Order on WhatsApp</a>
-        </article>
+<p>Fashion • Jewellery • Gifts</p>
 
-        <article class="product" aria-labelledby="p2-title">
-          <figure>
-            <img src="assets/product2.jpg" alt="Handcrafted designer bangle set" loading="lazy" width="800" height="600">
-            <figcaption class="muted">Designer Bangles — traditional yet contemporary</figcaption>
-          </figure>
-          <h3 id="p2-title">Designer Bangles</h3>
-          <div class="price">₹499</div>
-          <a class="order" href="https://wa.me/917904094006?text=Hi%20I%20want%20to%20order%20Designer%20Bangles" target="_blank" rel="noopener noreferrer" aria-label="Order Designer Bangles on WhatsApp">Order on WhatsApp</a>
-        </article>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <footer role="contentinfo">
-    <div class="container text-center">
-      <h3 style="color:var(--gold);margin:0 0 8px">DWANI OF SISTERS</h3>
-      <p class="muted">Instagram: <a href="https://www.instagram.com/dwani_of_sisters" target="_blank" rel="noopener noreferrer">@dwani_of_sisters</a></p>
-      <p class="muted">WhatsApp: <a href="tel:+917904094006">+91 79040 94006</a></p>
-      <p style="margin-top:10px">Made with ❤️</p>
-    </div>
-  </footer>
-</body>
-</html>
+</header>
+
+<section class="hero">
+
+<h2>Luxury Collections</h2>
+
+<p>Elegant Jewellery for Every Beautiful Woman</p>
+
+<a href="#" class="btn">Shop Now</a>
+
+<a href="https://instagram.com/" class="btn">Instagram</a>
+
+</section>
+
+<h2 class="section-title">
+
+Featured Products
+
+</h2>
+
+<section class="products">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DWANI OF SISTERS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+header{
+background:#111;
+padding:20px;
+border-bottom:2px solid gold;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+header img{
+width:90px;
+height:90px;
+border-radius:50%;
+border:3px solid gold;
+}
+
+.logo-text h1{
+color:gold;
+font-size:32px;
+}
+
+.logo-text p{
+color:#ddd;
+}
+
+.hero{
+text-align:center;
+padding:70px 20px;
+}
+
+.hero h2{
+font-size:48px;
+color:gold;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:gold;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+margin:10px;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+color:gold;
+margin:50px 0 30px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:20px;
+}
+
+.card{
+background:#1d1d1d;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(255,215,0,.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+color:gold;
+}
+
+.price{
+padding:0 15px;
+font-size:22px;
+color:white;
+}
+
+.order{
+display:block;
+margin:20px;
+padding:12px;
+background:#25D366;
+text-align:center;
+text-decoration:none;
+color:white;
+border-radius:8px;
+font-weight:bold;
+}
+
+footer{
+margin-top:60px;
+background:#111;
+padding:30px;
+text-align:center;
+border-top:2px solid gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="IMG-20260709-WA0070.jpg">
+
+<div class="logo-text">
+
+<h1>DWANI OF SISTERS</h1>
+
+<p>Fashion • Jewellery • Gifts</p>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h2>Luxury Collections</h2>
+
+<p>Elegant Jewellery for Every Beautiful Woman</p>
+
+<a href="#" class="btn">Shop Now</a>
+
+<a href="https://instagram.com/" class="btn">Instagram</a>
+
+</section>
+
+<h2 class="section-title">
+
+Featured Products
+
+</h2>
+
+<section class="products">
