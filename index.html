@@ -3,79 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DWANI OF SISTERS</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Poppins',Arial,sans-serif;
 }
 
 body{
-background:#0f0f0f;
-color:white;
+background:#FFF8FC;
+color:#333;
 }
 
 header{
-background:#111;
+background:#FADADD;
 padding:20px;
-border-bottom:2px solid gold;
 display:flex;
 align-items:center;
 justify-content:center;
 gap:20px;
+border-bottom:3px solid #E75480;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 header img{
-width:90px;
-height:90px;
+width:110px;
+height:110px;
 border-radius:50%;
-border:3px solid gold;
+border:3px solid #E75480;
+background:white;
 }
 
 .logo-text h1{
-color:gold;
-font-size:32px;
+font-size:36px;
+color:#C2185B;
 }
 
 .logo-text p{
-color:#ddd;
+font-size:18px;
+color:#666;
 }
 
 .hero{
 text-align:center;
-padding:70px 20px;
+padding:80px 20px;
+background:linear-gradient(135deg,#FFF8FC,#FFE6EF);
 }
 
 .hero h2{
-font-size:48px;
-color:gold;
-margin-bottom:20px;
+font-size:50px;
+color:#C2185B;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
+color:#555;
 margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 30px;
-background:gold;
-color:black;
+padding:15px 35px;
+background:#E75480;
+color:white;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
 margin:10px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#C2185B;
+transform:scale(1.05);
 }
 
 .section-title{
 text-align:center;
-font-size:36px;
-color:gold;
-margin:50px 0 30px;
+font-size:40px;
+margin:60px 0 30px;
+color:#C2185B;
 }
 
 .products{
@@ -83,61 +98,101 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 padding:20px;
+max-width:1400px;
+margin:auto;
 }
 
 .card{
-background:#1d1d1d;
-border-radius:15px;
+background:white;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 0 15px rgba(255,215,0,.2);
+box-shadow:0 10px 20px rgba(0,0,0,.12);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
 width:100%;
-height:280px;
+height:300px;
 object-fit:cover;
 }
 
 .card h3{
 padding:15px;
-color:gold;
+color:#C2185B;
+font-size:20px;
 }
 
 .price{
 padding:0 15px;
-font-size:22px;
+font-size:24px;
+font-weight:bold;
+color:#444;
 }
 
 .order{
 display:block;
 margin:20px;
-padding:12px;
+padding:14px;
 background:#25D366;
+color:white;
 text-align:center;
 text-decoration:none;
-color:white;
-border-radius:8px;
+border-radius:30px;
 font-weight:bold;
+transition:.3s;
 }
+
+.order:hover{
+background:#1DA851;
+}
+
+footer{
+background:#FADADD;
+padding:35px;
+text-align:center;
+margin-top:50px;
+border-top:3px solid #E75480;
+}
+
+footer h2{
+color:#C2185B;
+margin-bottom:10px;
+}
+
+footer p{
+margin:5px 0;
+color:#444;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <img src="Dwani-logo.jpg" alt="DWANI Logo">
 
 <div class="logo-text">
 <h1>DWANI OF SISTERS</h1>
 <p>Fashion • Jewellery • Gifts</p>
 </div>
+
 </header>
 
 <section class="hero">
-<h2>Luxury Collections</h2>
-<p>Elegant Jewellery for Every Beautiful Woman</p>
+
+<h2>Welcome to DWANI OF SISTERS</h2>
+
+<p>Discover Beautiful Jewellery, Hair Accessories, Bangles & Gift Collections.</p>
 
 <a href="#" class="btn">Shop Now</a>
+
 <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" class="btn">Instagram</a>
 
 </section>
@@ -145,7 +200,7 @@ font-weight:bold;
 <h2 class="section-title">Featured Products</h2>
 
 <section class="products">
-<div class="card">
+  <div class="card">
 <img src="IMG-20260709-WA0070.jpg" alt="Silver Glitter Bangles Set">
 <h3>Silver Glitter Bangles Set</h3>
 <p class="price">₹299</p>
@@ -214,7 +269,6 @@ font-weight:bold;
 <p class="price">₹149</p>
 <a href="https://wa.me/917904094006" class="order">Order on WhatsApp</a>
 </div>
-
 <div class="card">
 <img src="IMG-20260709-WA0086.jpg" alt="Black Floral Hair Clip">
 <h3>Black Floral Hair Clip</h3>
@@ -284,7 +338,6 @@ font-weight:bold;
 <p class="price">₹149</p>
 <a href="https://wa.me/917904094006" class="order">Order on WhatsApp</a>
 </div>
-
 <div class="card">
 <img src="IMG-20260709-WA0097.jpg" alt="Floral Hand Bracelet">
 <h3>Floral Hand Bracelet</h3>
@@ -347,7 +400,17 @@ font-weight:bold;
 <p class="price">₹249</p>
 <a href="https://wa.me/917904094006" class="order">Order on WhatsApp</a>
 </div>
+
 </section>
+
+<footer>
+<h2>DWANI OF SISTERS</h2>
+<p>Fashion • Jewellery • Gifts</p>
+<p>📞 +91 79040 94006</p>
+<p>📍 Kollam, Kerala</p>
+<p>Follow us on Instagram</p>
+<p>© 2026 DWANI OF SISTERS. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
