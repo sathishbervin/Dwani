@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dwani Of Sisters</title>
-<style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#fff7fb}header{display:flex;justify-content:space-between;align-items:center;padding:18px;background:#fff}.logo{display:flex;gap:12px;align-items:center}.logo img{width:70px;height:70px;border-radius:50%;border:3px solid #e91e63}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:20px}.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px #ccc}.card img{width:100%;height:260px;object-fit:cover}.cart-btn{margin:10px;padding:10px 16px;background:#e91e63;color:#fff;border:none;border-radius:20px;cursor:pointer}</style>
-</head><body>
-<header><div class="logo"><img src="Dwani-logo.jpg"><div><h1>Dwani Of Sisters</h1><p>Fashion • Jewellery • Gifts</p></div></div><div>🛒 <span id="cart-count">0</span></div></header>
-<section class="products">
-<div class="card"><img src="IMG-20260709-WA070.jpg"><h3>Product 1</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA071.jpg"><h3>Product 2</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA072.jpg"><h3>Product 3</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA073.jpg"><h3>Product 4</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA076.jpg"><h3>Product 5</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA080.jpg"><h3>Product 6</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA081.jpg"><h3>Product 7</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA083.jpg"><h3>Product 8</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA084.jpg"><h3>Product 9</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA085.jpg"><h3>Product 10</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA086.jpg"><h3>Product 11</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA087.jpg"><h3>Product 12</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA088.jpg"><h3>Product 13</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA089.jpg"><h3>Product 14</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA090.jpg"><h3>Product 15</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA092.jpg"><h3>Product 16</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA093.jpg"><h3>Product 17</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA094.jpg"><h3>Product 18</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA095.jpg"><h3>Product 19</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA096.jpg"><h3>Product 20</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA097.jpg"><h3>Product 21</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA098.jpg"><h3>Product 22</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0100.jpg"><h3>Product 23</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0101.jpg"><h3>Product 24</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0113.jpg"><h3>Product 25</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0114.jpg"><h3>Product 26</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0115.jpg"><h3>Product 27</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0116.jpg"><h3>Product 28</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-<div class="card"><img src="IMG-20260709-WA0117.jpg"><h3>Product 29</h3><p>₹199</p><button class="cart-btn" onclick="addToCart()">Add to Cart</button></div>
-</section><script>let c=0;function addToCart(){c++;document.getElementById('cart-count').textContent=c;alert('Added to cart');}</script></body></html>
+<style>
+body{margin:0;font-family:Arial;background:#fff4f8}
+header{display:flex;align-items:center;gap:15px;padding:15px;background:#fff;position:sticky;top:0;box-shadow:0 2px 8px #ddd}
+header img{width:70px;height:70px;border-radius:50%}
+h1{margin:0;color:#d81b60}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px #ccc}
+.card img{width:100%;height:250px;object-fit:cover}.info{padding:12px}
+.price{color:#d81b60;font-weight:bold}.btn{display:block;background:#d81b60;color:#fff;text-align:center;padding:10px;margin-top:10px;text-decoration:none;border-radius:8px}
+</style></head><body>
+<header><img src="Dwani-logo.jpg"><div><h1>Dwani Of Sisters</h1><div>Fashion • Jewellery • Gifts</div></div></header>
+<div class="grid">
+<div class="card"><img src="IMG-20260709-WA0070.jpg" alt="Stone Bangle Set"><div class="info"><h3>Stone Bangle Set</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Stone%20Bangle%20Set">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0071.jpg" alt="Pink Glass Bangles"><div class="info"><h3>Pink Glass Bangles</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Pink%20Glass%20Bangles">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0072.jpg" alt="Designer Bangles"><div class="info"><h3>Designer Bangles</h3><div class="price">₹299</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Designer%20Bangles">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0073.jpg" alt="Blue Bangle Set"><div class="info"><h3>Blue Bangle Set</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Blue%20Bangle%20Set">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0076.jpg" alt="Antique Bangle Set"><div class="info"><h3>Antique Bangle Set</h3><div class="price">₹349</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Antique%20Bangle%20Set">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0080.jpg" alt="Jewellery Gift Box"><div class="info"><h3>Jewellery Gift Box</h3><div class="price">₹799</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Jewellery%20Gift%20Box">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0081.jpg" alt="Floral Hair Clip"><div class="info"><h3>Floral Hair Clip</h3><div class="price">₹149</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Floral%20Hair%20Clip">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0083.jpg" alt="Stone Ring"><div class="info"><h3>Stone Ring</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Stone%20Ring">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0084.jpg" alt="Butterfly Clip"><div class="info"><h3>Butterfly Clip</h3><div class="price">₹179</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Butterfly%20Clip">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0085.jpg" alt="Satin Scrunchie"><div class="info"><h3>Satin Scrunchie</h3><div class="price">₹99</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Satin%20Scrunchie">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0086.jpg" alt="Black Flower Clip"><div class="info"><h3>Black Flower Clip</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Black%20Flower%20Clip">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0087.jpg" alt="Hair Claw"><div class="info"><h3>Hair Claw</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Hair%20Claw">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0088.jpg" alt="Designer Earrings"><div class="info"><h3>Designer Earrings</h3><div class="price">₹399</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Designer%20Earrings">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0089.jpg" alt="Bangle Combo"><div class="info"><h3>Bangle Combo</h3><div class="price">₹299</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Bangle%20Combo">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0090.jpg" alt="Premium Bangles"><div class="info"><h3>Premium Bangles</h3><div class="price">₹349</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Premium%20Bangles">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0092.jpg" alt="Traditional Earrings"><div class="info"><h3>Traditional Earrings</h3><div class="price">₹449</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Traditional%20Earrings">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0093.jpg" alt="Bracelet"><div class="info"><h3>Bracelet</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Bracelet">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0094.jpg" alt="Pendant Necklace"><div class="info"><h3>Pendant Necklace</h3><div class="price">₹349</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Pendant%20Necklace">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0095.jpg" alt="Jhumka Earrings"><div class="info"><h3>Jhumka Earrings</h3><div class="price">₹399</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Jhumka%20Earrings">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0096.jpg" alt="Finger Ring"><div class="info"><h3>Finger Ring</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Finger%20Ring">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0097.jpg" alt="Charm Bracelet"><div class="info"><h3>Charm Bracelet</h3><div class="price">₹299</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Charm%20Bracelet">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0098.jpg" alt="Gift Set"><div class="info"><h3>Gift Set</h3><div class="price">₹699</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Gift%20Set">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0100.jpg" alt="Necklace"><div class="info"><h3>Necklace</h3><div class="price">₹499</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Necklace">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0101.jpg" alt="Fashion Chain"><div class="info"><h3>Fashion Chain</h3><div class="price">₹299</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Fashion%20Chain">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0113.jpg" alt="Pink Bangles"><div class="info"><h3>Pink Bangles</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Pink%20Bangles">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0114.jpg" alt="Leaf Earrings"><div class="info"><h3>Leaf Earrings</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Leaf%20Earrings">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0115.jpg" alt="Bow Hair Band"><div class="info"><h3>Bow Hair Band</h3><div class="price">₹199</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Bow%20Hair%20Band">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0116.jpg" alt="Stud Earrings"><div class="info"><h3>Stud Earrings</h3><div class="price">₹149</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Stud%20Earrings">Order on WhatsApp</a></div></div>
+<div class="card"><img src="IMG-20260709-WA0117.jpg" alt="Rose Earrings"><div class="info"><h3>Rose Earrings</h3><div class="price">₹249</div><a class="btn" href="https://wa.me/917904094006?text=I%20want%20to%20buy%20Rose%20Earrings">Order on WhatsApp</a></div></div>
+</div></body></html>
