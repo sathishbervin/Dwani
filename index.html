@@ -3,59 +3,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dwani Of Sisters</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dwani Of Sisters - Version 3</title>
 <style>
-body{font-family:Arial;margin:0;background:#fff4f8}
-header{background:#d81b60;color:#fff;padding:15px;display:flex;justify-content:space-between;align-items:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:20px}
+body{font-family:Arial;margin:0;background:#fff5f8}
+header{background:#d81b60;color:#fff;padding:15px;font-size:24px;font-weight:bold;position:sticky;top:0}
+.container{display:flex;gap:20px;padding:20px}
+.products{flex:3;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .card{background:#fff;border-radius:12px;box-shadow:0 2px 8px #ccc;overflow:hidden}
-.card img{width:100%;height:240px;object-fit:cover}
-.info{padding:10px}
-button{background:#d81b60;color:#fff;border:none;padding:10px 15px;border-radius:8px;cursor:pointer}
-#cart{position:fixed;top:70px;right:10px;width:320px;background:#fff;border:1px solid #ccc;padding:15px;border-radius:10px}
-input,textarea{width:100%;padding:8px;margin:6px 0}
+.card img{width:100%;height:220px;object-fit:cover}
+.card div{padding:10px}
+button{background:#d81b60;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.cart{flex:1;background:#fff;border-radius:12px;padding:15px;box-shadow:0 2px 8px #ccc;position:sticky;top:70px;height:fit-content}
+.item{border-bottom:1px solid #ddd;padding:8px 0}
+.qty button{padding:2px 8px;margin:0 3px}
+input,textarea,select{width:100%;padding:8px;margin:6px 0}
+.place{width:100%;padding:12px}
 </style>
 </head>
 <body>
-<header>
-<h2>Dwani Of Sisters</h2>
-<div>🛒 Cart: <span id="count">0</span></div>
-</header>
+<header>Dwani Of Sisters 🛒 <span id="count">0</span></header>
+<div class="container">
+<div class="products" id="products"></div>
 
-<div class="grid" id="products"></div>
-
-<div id="cart">
+<div class="cart">
 <h3>Your Cart</h3>
-<div id="items">No items</div>
+<div id="cartItems">No items added.</div>
 <hr>
-<b>Total: ₹<span id="total">0</span></b>
-<h4>Checkout</h4>
+<p>Subtotal: ₹<span id="subtotal">0</span></p>
+<p>Delivery: ₹<span id="delivery">50</span></p>
+<h3>Total: ₹<span id="grand">50</span></h3>
+
+<h3>Delivery Address</h3>
 <input placeholder="Full Name">
 <input placeholder="Mobile Number">
-<textarea placeholder="Address"></textarea>
-<button onclick="pay()">Proceed to Payment</button>
+<input placeholder="House / Flat No">
+<input placeholder="Street">
+<input placeholder="Area">
+<input placeholder="City">
+<input placeholder="State">
+<input placeholder="Pincode">
+<textarea placeholder="Landmark / Delivery Instructions"></textarea>
+
+<select>
+<option>Cash on Delivery</option>
+<option>UPI (Coming Soon)</option>
+<option>Card (Coming Soon)</option>
+</select>
+
+<button class="place" onclick="placeOrder()">Place Order</button>
+</div>
 </div>
 
 <script>
 const products=[
-{img:"IMG-20260709-WA0070.jpg",name:"Stone Bangle Set",price:249},{img:"IMG-20260709-WA0071.jpg",name:"Pink Glass Bangles",price:199},{img:"IMG-20260709-WA0072.jpg",name:"Designer Bangles",price:299},{img:"IMG-20260709-WA0073.jpg",name:"Blue Bangle Set",price:249},{img:"IMG-20260709-WA0076.jpg",name:"Antique Bangle Set",price:349},{img:"IMG-20260709-WA0080.jpg",name:"Jewellery Gift Box",price:799},{img:"IMG-20260709-WA0081.jpg",name:"Floral Hair Clip",price:149},{img:"IMG-20260709-WA0083.jpg",name:"Stone Ring",price:199},{img:"IMG-20260709-WA0084.jpg",name:"Butterfly Clip",price:179},{img:"IMG-20260709-WA0085.jpg",name:"Satin Scrunchie",price:99},{img:"IMG-20260709-WA0086.jpg",name:"Black Flower Clip",price:199},{img:"IMG-20260709-WA0087.jpg",name:"Hair Claw",price:199},{img:"IMG-20260709-WA0088.jpg",name:"Designer Earrings",price:399},{img:"IMG-20260709-WA0089.jpg",name:"Bangle Combo",price:299},{img:"IMG-20260709-WA0090.jpg",name:"Premium Bangles",price:349},{img:"IMG-20260709-WA0092.jpg",name:"Traditional Earrings",price:449},{img:"IMG-20260709-WA0093.jpg",name:"Bracelet",price:249},{img:"IMG-20260709-WA0094.jpg",name:"Pendant Necklace",price:349},{img:"IMG-20260709-WA0095.jpg",name:"Jhumka Earrings",price:399},{img:"IMG-20260709-WA0096.jpg",name:"Finger Ring",price:199},{img:"IMG-20260709-WA0097.jpg",name:"Charm Bracelet",price:299},{img:"IMG-20260709-WA0098.jpg",name:"Gift Set",price:699},{img:"IMG-20260709-WA0100.jpg",name:"Necklace",price:499},{img:"IMG-20260709-WA0101.jpg",name:"Fashion Chain",price:299},{img:"IMG-20260709-WA0113.jpg",name:"Pink Bangles",price:249},{img:"IMG-20260709-WA0114.jpg",name:"Leaf Earrings",price:249},{img:"IMG-20260709-WA0115.jpg",name:"Bow Hair Band",price:199},{img:"IMG-20260709-WA0116.jpg",name:"Stud Earrings",price:149},{img:"IMG-20260709-WA0117.jpg",name:"Rose Earrings",price:249},
+{img:"IMG-20260709-WA0070.jpg",name:"Stone Bangle Set",price:249},{img:"IMG-20260709-WA0071.jpg",name:"Pink Glass Bangles",price:199},{img:"IMG-20260709-WA0072.jpg",name:"Designer Bangles",price:299},{img:"IMG-20260709-WA0073.jpg",name:"Blue Bangle Set",price:249},{img:"IMG-20260709-WA0076.jpg",name:"Antique Bangle Set",price:349},{img:"IMG-20260709-WA0080.jpg",name:"Jewellery Gift Box",price:799},{img:"IMG-20260709-WA0081.jpg",name:"Floral Hair Clip",price:149},{img:"IMG-20260709-WA0083.jpg",name:"Stone Ring",price:199},
 ];
-let cart=[];
+const cart={};
 const grid=document.getElementById('products');
 products.forEach((p,i)=>{
-grid.innerHTML+=`<div class="card"><img src="${p.img}"><div class="info"><h3>${p.name}</h3><p>₹${p.price}</p><button onclick="add(${i})">Add to Cart</button></div></div>`;
+grid.innerHTML+=`<div class="card"><img src="${p.img}"><div><h4>${p.name}</h4><p>₹${p.price}</p><button onclick="add(${i})">Add to Cart</button></div></div>`;
 });
-function add(i){cart.push(products[i]);render();}
-function render(){
-document.getElementById('count').textContent=cart.length;
-if(cart.length==0){items.innerHTML="No items";total.textContent=0;return;}
-let t=0,s="";
-cart.forEach(c=>{t+=c.price;s+=c.name+" - ₹"+c.price+"<br>";});
-items.innerHTML=s;total.textContent=t;
+function add(i){
+ cart[i]=(cart[i]||0)+1; render();
 }
-function pay(){
-alert("Checkout page is ready. To accept real payments, connect Razorpay, PhonePe, or another payment gateway. HTML alone cannot process payments.");
+function render(){
+ let subtotal=0,count=0,out="";
+ Object.keys(cart).forEach(k=>{
+   let q=cart[k],p=products[k];
+   subtotal+=q*p.price; count+=q;
+   out+=`<div class="item"><b>${p.name}</b><br>
+   ₹${p.price} × ${q}=₹${p.price*q}<br>
+   <div class="qty">
+   <button onclick="change(${k},-1)">-</button>
+   ${q}
+   <button onclick="change(${k},1)">+</button>
+   <button onclick="removeItem(${k})">🗑</button>
+   </div></div>`;
+ });
+ if(!out) out="No items added.";
+ document.getElementById("cartItems").innerHTML=out;
+ document.getElementById("count").textContent=count;
+ document.getElementById("subtotal").textContent=subtotal;
+ document.getElementById("grand").textContent=subtotal+50;
+}
+function change(i,d){cart[i]+=d;if(cart[i]<=0)delete cart[i];render();}
+function removeItem(i){delete cart[i];render();}
+function placeOrder(){
+ alert("Version 3 complete! Cart editing and checkout are working. Real online payments require integrating a payment gateway such as Razorpay.");
 }
 </script>
 </body></html>
