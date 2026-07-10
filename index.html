@@ -1,96 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dwani Of Sisters - Version 3</title>
-<style>
-body{font-family:Arial;margin:0;background:#fff5f8}
-header{background:#d81b60;color:#fff;padding:15px;font-size:24px;font-weight:bold;position:sticky;top:0}
-.container{display:flex;gap:20px;padding:20px}
-.products{flex:3;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px #ccc;overflow:hidden}
-.card img{width:100%;height:220px;object-fit:cover}
-.card div{padding:10px}
-button{background:#d81b60;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
-.cart{flex:1;background:#fff;border-radius:12px;padding:15px;box-shadow:0 2px 8px #ccc;position:sticky;top:70px;height:fit-content}
-.item{border-bottom:1px solid #ddd;padding:8px 0}
-.qty button{padding:2px 8px;margin:0 3px}
-input,textarea,select{width:100%;padding:8px;margin:6px 0}
-.place{width:100%;padding:12px}
-</style>
+<title>Dwani Of Sisters - Version 4</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>Dwani Of Sisters 🛒 <span id="count">0</span></header>
-<div class="container">
-<div class="products" id="products"></div>
+<header>
+<h1>Dwani Of Sisters</h1>
+<input id="search" placeholder="Search products...">
+<button id="cartBtn">🛒 Cart (<span id="count">0</span>)</button>
+</header>
 
-<div class="cart">
-<h3>Your Cart</h3>
-<div id="cartItems">No items added.</div>
-<hr>
+<nav>
+<button class="cat">All</button>
+<button class="cat">Bangles</button>
+<button class="cat">Earrings</button>
+<button class="cat">Hair Accessories</button>
+<button class="cat">Necklaces</button>
+</nav>
+
+<main>
+<section id="products" class="grid"></section>
+
+<aside id="cart">
+<h2>Your Cart</h2>
+<div id="cartItems">No items.</div>
 <p>Subtotal: ₹<span id="subtotal">0</span></p>
-<p>Delivery: ₹<span id="delivery">50</span></p>
-<h3>Total: ₹<span id="grand">50</span></h3>
+<p>Delivery: ₹50</p>
+<h3>Total: ₹<span id="total">50</span></h3>
 
-<h3>Delivery Address</h3>
+<h3>Checkout</h3>
 <input placeholder="Full Name">
 <input placeholder="Mobile Number">
-<input placeholder="House / Flat No">
+<input placeholder="House / Flat">
 <input placeholder="Street">
-<input placeholder="Area">
 <input placeholder="City">
 <input placeholder="State">
 <input placeholder="Pincode">
-<textarea placeholder="Landmark / Delivery Instructions"></textarea>
-
 <select>
 <option>Cash on Delivery</option>
 <option>UPI (Coming Soon)</option>
-<option>Card (Coming Soon)</option>
 </select>
-
-<button class="place" onclick="placeOrder()">Place Order</button>
-</div>
-</div>
-
-<script>
-const products=[
-{img:"IMG-20260709-WA0070.jpg",name:"Stone Bangle Set",price:249},{img:"IMG-20260709-WA0071.jpg",name:"Pink Glass Bangles",price:199},{img:"IMG-20260709-WA0072.jpg",name:"Designer Bangles",price:299},{img:"IMG-20260709-WA0073.jpg",name:"Blue Bangle Set",price:249},{img:"IMG-20260709-WA0076.jpg",name:"Antique Bangle Set",price:349},{img:"IMG-20260709-WA0080.jpg",name:"Jewellery Gift Box",price:799},{img:"IMG-20260709-WA0081.jpg",name:"Floral Hair Clip",price:149},{img:"IMG-20260709-WA0083.jpg",name:"Stone Ring",price:199},
-];
-const cart={};
-const grid=document.getElementById('products');
-products.forEach((p,i)=>{
-grid.innerHTML+=`<div class="card"><img src="${p.img}"><div><h4>${p.name}</h4><p>₹${p.price}</p><button onclick="add(${i})">Add to Cart</button></div></div>`;
-});
-function add(i){
- cart[i]=(cart[i]||0)+1; render();
-}
-function render(){
- let subtotal=0,count=0,out="";
- Object.keys(cart).forEach(k=>{
-   let q=cart[k],p=products[k];
-   subtotal+=q*p.price; count+=q;
-   out+=`<div class="item"><b>${p.name}</b><br>
-   ₹${p.price} × ${q}=₹${p.price*q}<br>
-   <div class="qty">
-   <button onclick="change(${k},-1)">-</button>
-   ${q}
-   <button onclick="change(${k},1)">+</button>
-   <button onclick="removeItem(${k})">🗑</button>
-   </div></div>`;
- });
- if(!out) out="No items added.";
- document.getElementById("cartItems").innerHTML=out;
- document.getElementById("count").textContent=count;
- document.getElementById("subtotal").textContent=subtotal;
- document.getElementById("grand").textContent=subtotal+50;
-}
-function change(i,d){cart[i]+=d;if(cart[i]<=0)delete cart[i];render();}
-function removeItem(i){delete cart[i];render();}
-function placeOrder(){
- alert("Version 3 complete! Cart editing and checkout are working. Real online payments require integrating a payment gateway such as Razorpay.");
-}
-</script>
-</body></html>
+<button onclick="placeOrder()">Place Order</button>
+</aside>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
